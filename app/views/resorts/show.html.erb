@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @resort.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @resort.description %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @resort.country_id %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @resort.image %>
+</p>
+
+
+<%= link_to 'Edit', edit_resort_path(@resort) %> |
+<%= link_to 'Back', resorts_path %>

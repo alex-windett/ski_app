@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @run.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @run.description %>
+</p>
+
+<p>
+  <b>Picture:</b>
+  <%= @run.picture %>
+</p>
+
+<p>
+  <b>Video:</b>
+  <%= @run.video %>
+</p>
+
+<p>
+  <b>Resort:</b>
+  <%= @run.resort_id %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @run.rating %>
+</p>
+
+
+<%= link_to 'Edit', edit_run_path(@run) %> |
+<%= link_to 'Back', runs_path %>

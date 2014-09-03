@@ -8,10 +8,15 @@
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<%= render "layouts/menu"%>
 
-<%= yield %>
+<div id="site-wrap">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= yield %>
+
+<!-- need to putter a footer inside these tags -->
+</div>
 
 </body>
 </html>

@@ -7,6 +7,9 @@ gem 'rails', '3.2.17'
 
 gem 'pg'
 gem 'devise'
+gem 'carrierwave'
+gem 'rmagick', :require => 'RMagick'
+gem "fog", "~> 1.3.1"
 
 
 # Gems used only for assets and not required

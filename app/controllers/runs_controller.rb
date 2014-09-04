@@ -1,4 +1,4 @@
-class RunsController < ApplicationController
+  class RunsController < ApplicationController
   # GET /runs
   # GET /runs.json
   def index

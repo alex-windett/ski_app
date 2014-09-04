@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20140903152347) do
   create_table "runs", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.text     "picture"
+    t.text     "image"
     t.text     "video"
     t.integer  "resort_id"
     t.float    "rating"

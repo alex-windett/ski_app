@@ -1,4 +1,8 @@
 SkiApp::Application.routes.draw do
+  get "user/index"
+
+  get "user/show"
+
   resources :comments
 
 

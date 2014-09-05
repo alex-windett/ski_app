@@ -1,8 +1,0 @@
-body {
-  /* Without this, the body has excess horizontal scroll when the menu is open */
-  overflow-x: hidden;
-}
-
-/* Micro reset */
-*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;}
-

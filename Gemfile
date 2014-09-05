@@ -10,6 +10,8 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
 gem "fog", "~> 1.3.1"
+gem 'paperclip', '~> 3.0' # upload of XML file
+gem 'nokogiri' # for parsing XML
 
 
 # Gems used only for assets and not required

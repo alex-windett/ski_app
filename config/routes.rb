@@ -1,20 +1,16 @@
 SkiApp::Application.routes.draw do
-  get "user/index"
 
-  get "user/show"
+  resources :user, only: [:index, :show]
 
   resources :comments
 
-
   resources :runs
-
 
   resources :resorts
 
-
   devise_for :users
 
-  resources :countries
+  resources :countries, only: [:index]
 
   root to: "resorts#index"
   # The priority is based upon order of creation:

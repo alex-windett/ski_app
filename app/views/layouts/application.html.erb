@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SkiApp</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+<title>Ski App</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 </head>
 <body>
+        <div class='rmm'>
+            <ul>
+                <li><%= link_to "Home", root_path %></li>
+                <li><%= link_to "Countries", countries_path %></li>
+                <li><%= link_to "Resorts", resorts_path %></li>
+                <li><%= link_to "Photos", runs_path %></li>
+                <li><%= link_to "My Profile", user_index_path %></li>
+                <li><%= link_to 'Login In', new_user_session_path %></a></li>
+                <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            </ul>
+        </div>
 
-<%= render "layouts/menu"%>
-
-<div id="site-wrap">
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= yield %>
-
-<!-- need to putter a footer inside these tags -->
-</div>
 
 </body>
 </html>

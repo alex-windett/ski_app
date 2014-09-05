@@ -56,4 +56,12 @@ class Run < ActiveRecord::Base
     end
   end
 
+  def polyline_markers
+    self.markers.map(&:latlng)
+  end
+
+   def polyline
+      Polylines::Encoder.encode_points(self.polyline_markers)
+    end
+
 end

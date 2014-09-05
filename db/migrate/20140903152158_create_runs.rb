@@ -10,5 +10,6 @@ class CreateRuns < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_attachment :runs, :gpx
   end
 end

@@ -28,13 +28,15 @@ ActiveRecord::Schema.define(:version => 20140905100351) do
   end
 
   create_table "markers", :force => true do |t|
-    t.decimal  "latitude"
-    t.decimal  "longitude"
-    t.decimal  "elevation"
-    t.datetime "datetime"
-    t.integer  "run_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.float    "elevation"
+    t.string   "description"
+    t.datetime "marker_created_at"
+    t.integer  "segment_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "resorts", :force => true do |t|
@@ -53,8 +55,12 @@ ActiveRecord::Schema.define(:version => 20140905100351) do
     t.text     "video"
     t.integer  "resort_id"
     t.float    "rating"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "gpx_file_name"
+    t.string   "gpx_content_type"
+    t.integer  "gpx_file_size"
+    t.datetime "gpx_updated_at"
   end
 
   create_table "segments", :force => true do |t|

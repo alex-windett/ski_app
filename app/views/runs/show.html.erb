@@ -1,34 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @run.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @run.description %>
-</p>
-
-<p>
-  <b>Picture:</b>
-  <%= link_to image_tag(@run.image.thumb.url), @run.image.detail.url %>
-</p>
-
-<p>
-  <b>Video:</b>
-  <%= @run.video %>
-</p>
-
-<p>
-  <b>Resort:</b>
-  <%= @run.resort_id %>
-</p>
-
-<p>
-  <b>Rating:</b>
-  <%= @run.rating %>
-</p>
+<table class='run_info'>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Elevation</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @run.markers.each do |marker| %>
+        <tr>
+          <td><%= marker.id %></td>
+          <td><%= marker.latitude %></td>
+          <td><%= marker.longitude %></td>
+          <td><%= marker.elevation %></td>
+          <td><%= marker.marker_created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 
 <%= link_to 'Edit', edit_run_path(@run) %> |

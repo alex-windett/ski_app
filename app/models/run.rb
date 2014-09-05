@@ -1,10 +1,59 @@
 class Run < ActiveRecord::Base
-  attr_accessible :description, :name, :image, :rating, :resort_id, :video
+  attr_accessible :description, :name, :image, :rating, :resort_id, :video, :gpx
 
   belongs_to :resort
   belongs_to :user
-  has_many :markers
+  has_many :segments, :dependent => :destroy
+  has_many :markers, :through => :segments
   has_many :comments
 
-  mount_uploader :image, RunImageUploader
+  # mount_uploader :image, RunImageUploader
+
+  has_attached_file :gpx
+
+  before_save :parse_file
+
+  def parse_file
+    tempfile = gpx.queued_for_write[:original]
+    doc = Nokogiri::XML(tempfile)
+    parse_xml(doc)
+  end
+
+  def parse_xml(doc)
+    doc.root.elements.each do |node|
+      parse_runs(node)
+    end
+  end
+
+  def parse_runs(node)
+    if node.node_name.eql? 'trk'
+      node.elements.each do |node|
+        parse_run_segments(node)
+      end
+    end
+  end
+
+   def parse_run_segments(node)
+    if node.node_name.eql? 'trkseg'
+      tmp_segment = Segment.new
+      node.elements.each do |node|
+        parse_markers(node,tmp_segment)
+      end
+      self.segments << tmp_segment
+    end
+  end
+
+  def parse_markers(node,tmp_segment)
+    if node.node_name.eql? 'trkpt'
+      tmp_marker = Marker.new
+      tmp_marker.latitude = node.attr("lat")
+      tmp_marker.longitude = node.attr("lon")
+      node.elements.each do |node|
+        tmp_marker.elevation = node.text.to_s if node.name.eql? 'ele'
+        tmp_marker.marker_created_at = node.text.to_s if node.name.eql? 'time'
+      end
+      tmp_segment.markers << tmp_marker
+    end
+  end
+
 end

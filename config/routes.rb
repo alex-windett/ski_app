@@ -8,7 +8,7 @@ SkiApp::Application.routes.draw do
 
   resources :resorts
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks"}
 
   resources :countries, only: [:index]
 

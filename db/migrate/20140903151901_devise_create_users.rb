@@ -33,6 +33,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :role, default: "user"
       t.string :photo
       t.date :dob
+      t.string :name
 
       t.timestamps
     end

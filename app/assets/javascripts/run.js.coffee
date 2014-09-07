@@ -1,6 +1,6 @@
 gm_init = ->
   gm_center = new google.maps.LatLng(45.45, 6.97)
-  gm_map_type = google.maps.MapTypeId.SATALITE
+  gm_map_type = google.maps.MapTypeId.TERRAIN
   map_options = {center: gm_center, zoom: 12, mapTypeId: gm_map_type}
   new google.maps.Map(@map_canvas,map_options);
 

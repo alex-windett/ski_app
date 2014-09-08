@@ -10,10 +10,17 @@
     end
   end
 
+  def get_data
+    respond_to do |format|
+      format.json {}
+    end
+  end
+
   # GET /runs/1
   # GET /runs/1.json
   def show
     @run = Run.find(params[:id])
+    @markers = Marker.all
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,6 +1,16 @@
 $(document).ready(function() {
     
-    var data = [3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 7],
+   d3.json('/markers.json', function(error, data){
+    elevation = []
+    data.forEach(function(d){
+        // console.log(d.elevation)
+        elevation.push(d.elevation)
+        })
+    console.log(elevation)
+
+    data = elevation,
+    // data = [1, 3 ,5 ,6 ,7 ,7 , 12]
+    console.log(data)
     w = 600,
     h = 300,
     margin = 20,
@@ -70,4 +80,5 @@ $(document).ready(function() {
         .attr("y2", function(d) { return -1 * y(d); })
         .attr("x2", x(0))
 
+    });
 });

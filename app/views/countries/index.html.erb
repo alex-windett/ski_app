@@ -5,7 +5,7 @@
   <div class="country_list">
 
    <h1>Select a country</h1>    
-
+   <input placeholder="Search Countries..." ng-model="search">
      <ul>
         <li ng-repeat="country in countries | filter:{name:search} | orderBy:'name'" ng-click="selectCountry(country)"> {{ country.name }} </li>
      </ul>
@@ -20,7 +20,7 @@
       <section ng-show="selectCountry">
         <h2> {{ selectedCountry.name }} </h2>
         <ul>
-          <li ng-repeat="country in .resorts | filter:{name:search} | orderBy:'name'"> {{ country.resorts}} </li>
+          <li></li>
         </ul>
       </section>
 

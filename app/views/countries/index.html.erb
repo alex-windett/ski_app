@@ -10,9 +10,8 @@
         <li ng-repeat="country in countries | filter:{name:search} | orderBy:'name'" ng-click="selectCountry(country)"> {{ country.name }} </li>
      </ul>
 
-    <h2>New Country</h2>
       <form name="countryForm" ng-submit="countryForm.$valid && addCountry()">
-        <label>Country Name</label>
+        <label>Add a new country</label>
         <input type="text" ng-model="newCountry.name"> 
         <button>Submit</button>     
       </form>
@@ -20,7 +19,7 @@
       <section ng-show="selectCountry">
         <h2> {{ selectedCountry.name }} </h2>
         <ul>
-          <li></li>
+          <li ng-repeat="resort in resorts" ng-if="resort.country_id === selectedCountry.id"> {{ resort.name }} </li>
         </ul>
       </section>
 

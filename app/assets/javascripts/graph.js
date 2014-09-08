@@ -8,8 +8,8 @@ $(document).ready(function() {
             })
         console.log(elevation)
 
-// data = [3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 200000, 5, 7],
-var data = elevation
+// data = [3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 200, 5, 7],
+data = elevation
 console.log(data)
 w = 400,
 h = 200,
@@ -39,7 +39,7 @@ g.append("svg:line")
  
 g.append("svg:line")
     .attr("x1", x(0))
-    .attr("y1", -1 * y(0))
+    .attr("y1", -1 * y(0)) ///
     .attr("x2", x(0))
     .attr("y2", -1 * y(d3.max(data)))
 

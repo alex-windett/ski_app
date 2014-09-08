@@ -7,6 +7,7 @@
     countries = []
     $scope.countries = countries
 
+
     $http.get("/countries.json").success(function(data){
       $scope.countries = data
     })
@@ -21,6 +22,11 @@
 
     $scope.selectCountry = function(country){
       $scope.selectedCountry = country;
+      $http.get("/resorts.json").success(function(data){
+        $scope.resorts = data
+      })
+      $resorts = []
+      $scope.resorts = resorts
     }
 
     $scope.hideCountry = function(country){
@@ -28,5 +34,14 @@
     }
 
   }]);
+
+resorts = [
+  {
+    name: "hello"
+  },
+  {
+    name: "goodbye"
+  }
+]
 
 })();

@@ -4,15 +4,15 @@
 
   app.controller("SkiController", ["$scope", "$http", function($scope, $http){
 
+    countries = []
     $scope.countries = countries
-    $scope.selectedCountry = countries[0]
 
     $http.get("/countries.json").success(function(data){
       $scope.countries = data
     })
 
     $scope.addCountry = function(){
-      $http.post("/countries.json", {student: $scope.newCountry}).success(function(data){
+      $http.post("/countries.json", {country: $scope.newCountry}).success(function(data){
         $scope.countries.push($scope.newCountry)
         $scope.newCountry = false
         $scope.countryForm.$setPristine
@@ -28,23 +28,5 @@
     }
 
   }]);
-
-
-  countries = [
-
-    {
-      name: "France",
-    },
-     {
-      name: "Germany",
-    },
-     {
-      name: "England",
-    },
-     {
-      name: "Italy",
-    },
-
-  ]
 
 })();

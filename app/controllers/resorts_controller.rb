@@ -2,6 +2,7 @@ class ResortsController < ApplicationController
   # GET /resorts
   # GET /resorts.json
   def index
+
     @resorts = Resort.all
 
     respond_to do |format|

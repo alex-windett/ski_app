@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require d3
+//= require angular
 //= require_tree .
 

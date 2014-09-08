@@ -10,7 +10,7 @@ SkiApp::Application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks"}
 
-  resources :countries, only: [:index]
+  resources :countries, only: [:index, :create, :new]
 
   root to: "resorts#index"
   # The priority is based upon order of creation:

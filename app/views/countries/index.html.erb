@@ -1,23 +1,26 @@
-<h1>Listing countries</h1>
+<html ng-app="skiApp">
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div ng-Controller="SkiController as ski">
 
-<% @countries.each do |country| %>
-  <tr>
-    <td><%= country.name %></td>
-    <td><%= link_to 'Show', country %></td>
-    <td><%= link_to 'Edit', edit_country_path(country) %></td>
-    <td><%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <div class="country_list">
 
-<br />
+   <h1>Select a country</h1>    
 
-<%= link_to 'New Country', new_country_path %>
+     <ul>
+        <li ng-repeat="country in countries | filter:{name:search} | orderBy:'name'" ng-click="selectCountry(country)"> {{ country.name }} </li>
+     </ul>
+
+    <h2>Create Country</h2>
+      <form name="countryForm" ng-submit="countryForm.$valid && addCountry()">
+        <label>Country Name</label>
+        <input type="text" ng-model="newCountry.name"> 
+        <button>Submit</button>     
+      </form>
+
+      <section ng-show="selectCountry">
+        <h2> {{ selectedCountry.name }} </h2>
+      </section>
+
+  </div>
+
+</div>

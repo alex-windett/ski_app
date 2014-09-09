@@ -17,13 +17,13 @@
       </form>
 
       <section ng-show="selectCountry">
-        <p>Add a new resort <%= link_to "here", new_resort_path %>, (opens a new page)</p>
         <h2> {{ selectedCountry.name }} </h2>
         <ul>
           <li ng-repeat="resort in resorts" ng-if="resort.country_id === selectedCountry.id">
             <a href="/resorts/{{resort.id}}"> {{ resort.name }} </a>
           </li>
         </ul>
+         <p>Add a new resort <%= link_to "here", new_resort_path %>, (opens a new page)</p>
       </section>
 
   </div>

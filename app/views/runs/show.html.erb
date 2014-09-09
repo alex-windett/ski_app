@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<table class='run_info'>
+<h2> <%= @run.name %> </h2>
+
+<p><%= @run.description %></p>
+
+<p><%= @run.resort %></p>
+
+<p><%= @run.rating %></p>
+
+<!-- <table class='run_info'>
     <thead>
       <tr>
         <th>ID</th>
@@ -21,15 +29,18 @@
         </tr>
       <% end %>
     </tbody>
-</table>
+</table> -->
 
-<div id="map_canvas"></div>
+<div class="geo_data">
+  <p><button onclick="geoFindMe()">Start Tracking</button></p>
+  <div id="output"></div>
+</div>
 
-<div class="graph"></div>
+<section>
+  <div id="map_canvas"></div>
+  <div class="graph"></div>
+</section>
 
-
-<p><button onclick="geoFindMe()">Start Tracking</button></p>
-<div id="output"></div>
 
 <%= link_to 'Edit', edit_run_path(@run) %> |
 <%= link_to 'Back', runs_path %>

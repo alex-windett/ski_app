@@ -13,7 +13,7 @@ data = elevation
 console.log(data)
 w = 400,
 h = 200,
-margin = 20,
+margin = 30,
 y = d3.scale.linear().domain([0, d3.max(data)]).range([0 + margin, h - margin]),
 x = d3.scale.linear().domain([0, data.length]).range([0 + margin, w - margin])
 

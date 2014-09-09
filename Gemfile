@@ -18,6 +18,7 @@ gem "omniauth-google-oauth2"
 gem "omniauth-github"
 gem "twitter_oauth"
 gem 'angularjs-rails'
+gem 'high_voltage'
 
 # Gems used only for assets and not required
 # in production environments by default.

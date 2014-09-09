@@ -7,7 +7,6 @@
     countries = []
     $scope.countries = countries
 
-
     $http.get("/countries.json").success(function(data){
       $scope.countries = data
     })
@@ -18,6 +17,14 @@
         $scope.newCountry = false
         $scope.countryForm.$setPristine
       });
+    }
+
+    $scope.addResort = function(){
+      $http.post("/resorts.json", {resort: $scope.newResort}).success(function(data){
+        $scope.resorts.push($scope.newResort)
+        $scope.newResort = false
+        $scope.resortForm.$setPristine
+      })
     }
 
     $scope.selectCountry = function(country){

@@ -22,7 +22,7 @@
 
 <p>
   <b>Image:</b>
-  <%= image_tag @resort.image %>
+  <%= image_tag @resort.image if @resort.image.present? %>
 </p>
 
 <p>

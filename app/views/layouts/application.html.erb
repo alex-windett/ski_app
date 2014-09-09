@@ -16,11 +16,10 @@
                 <li><%= link_to "Home", page_path('home') %></li>
                 <li><%= link_to "Countries", countries_path %></li>
                 <li><%= link_to "Resorts", resorts_path %></li>
-                <li><%= link_to "Photos", runs_path %></li>
-                <li><%= link_to "My Profile", user_index_path %></li>
+                <li><%= link_to "Runs", runs_path %></li>
                 <li>
                   <% if user_signed_in? %>
-                    <%= link_to current_user.email %>
+                    <%= link_to current_user.email, current_user %>
                     <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li> 
                   <% else %>
                     <li><%= link_to "Sign up",new_user_registration_path %></li>
@@ -30,9 +29,11 @@
             </ul>
         </div>
 
+<div class="main_content">
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= yield %>
+</div>
 
 </body>
 </html>

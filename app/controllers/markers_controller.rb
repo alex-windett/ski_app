@@ -2,7 +2,18 @@ class MarkersController < ApplicationController
   # GET /countries
   # GET /countries.json
   def index
+
     @markers = Marker.all
+
+    # if params[:segment_id]
+    #   binding.pry
+    #     @segment = Segment.find(params[:id])
+    #     @markers = @segment.markers
+    # else
+    #     @markers = Marker.all
+    #     binding.pry
+    # end
+
 
     respond_to do |format|
       format.html # index.html.erb

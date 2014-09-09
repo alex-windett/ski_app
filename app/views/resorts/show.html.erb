@@ -2,7 +2,12 @@
 
 <p>
   <b>Name:</b>
-  <%= @resort.name %>
+  <div id="resortName"><%= @resort.name %></div>
+</p>
+
+<p>
+  <b>Current Snow Conditions</b>
+  <div class="weather"></div>
 </p>
 
 <p>
@@ -21,8 +26,8 @@
 </p>
 
 <p>
-  <b>Current Snow Conditions</b>
-  <div class="weather"></div>
+  <b>Uploaded Runs:</b>
+  <% @resort.runs %>
 </p>
 
 

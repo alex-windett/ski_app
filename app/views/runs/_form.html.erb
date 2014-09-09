@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :resort_id %><br />
-    <%= f.number_field :resort_id %>
+    <%= f.collection_select :resort_id, Resort.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :rating %><br />

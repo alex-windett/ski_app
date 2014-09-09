@@ -15,7 +15,8 @@
   <tr>
     <td><%= resort.name %></td>
     <td><%= resort.description %></td>
-    <td><%#= resort.country.name %></td>
+    <td><%#= resort.country.name %></td> 
+    <!-- fix later, need to validate => presence of country needs to be present -->
     <td><%= image_tag resort.image %></td>
     <td><%= link_to 'Show', resort %></td>
     <td><%= link_to 'Edit', edit_resort_path(resort) %></td>

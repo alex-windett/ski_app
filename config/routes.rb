@@ -12,7 +12,7 @@ SkiApp::Application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks"}
 
-  resources :countries, only: [:index]
+  resources :countries, except: [:update, :destroy, :edit]
 
   root :to => 'high_voltage/pages#show', id: 'home'
   # The priority is based upon order of creation:

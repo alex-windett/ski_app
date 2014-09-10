@@ -6,5 +6,9 @@ class Medium < ActiveRecord::Base
   validate :run_id, presence: true
 
   mount_uploader :image, MediaImageUploader
-  # mount_uploader :video, MediaImageUploader
+  mount_uploader :video, MediaVideoUploader
+
+  def set_success(format, opts)
+    self.success = true
+  end
 end

@@ -1,10 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h2> <%= @run.name %> </h2>
+<h2><%= @run.name %></h2>
+
+<p style="display:none" id="run_id"><%= @run.id %></p>
 
 <p><%= @run.description %></p>
 
-<p><%= @run.resort %></p>
+<p><%= @run.resort.name %></p>
 
 <p><%= @run.rating %></p>
 

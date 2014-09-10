@@ -3,7 +3,8 @@
   # GET /runs.json
   def index
     @runs = Run.all
-
+    @markers = Marker.all
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @runs }

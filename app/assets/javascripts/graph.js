@@ -1,6 +1,12 @@
 $(document).ready(function() {
     
-    d3.json('/markers.json', function(error, data){
+  // val = $("#resortName").html()
+  // console.log(val)
+
+    run_id = $("#run_id").html()
+    console.log(run_id)
+
+    d3.json('/markers.json?run_id=' + run_id, function(error, data){
         elevation = []
         data.forEach(function(d){
             // console.log(d.elevation)

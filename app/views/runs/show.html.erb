@@ -2,7 +2,9 @@
 
 <aside class="run_details">
   <h2><%= @run.name %></h2>
+  <% if @run %>
   <p style="display:none" id="run_id"><%= @run.id %></p>
+  <% end %>
   <p>Description: <%= @run.description %></p>
   <p>Resort: <%= @run.resort.name %></p>
   <p>Rating: <%= @run.rating %></p>

@@ -1,6 +1,16 @@
 .main_content {
   width: 70%;
-  margin: 5% auto 5% auto;
+  margin: 4% auto 5% auto;
+}
+
+.home {
+  width: 100%;
+  .home_info {
+    padding: 2%;
+    display: inline-block;
+    width: 28%;
+    border: solid 2px black;
+  }
 }
 
 a {

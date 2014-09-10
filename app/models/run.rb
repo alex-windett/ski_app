@@ -1,13 +1,16 @@
 class Run < ActiveRecord::Base
-  attr_accessible :description, :name, :image, :rating, :resort_id, :video, :gpx
+  attr_accessible :description, :name, :rating, :resort_id, :gpx
 
   belongs_to :resort
   belongs_to :user
   has_many :segments, :dependent => :destroy
   has_many :markers, :through => :segments
   has_many :comments
+  has_many :mediums
 
-  # mount_uploader :image, RunImageUploader
+  validate :name, presence: true
+  validate :resort_id, presence: true
+  validate :gpx, presence: true
 
   has_attached_file :gpx
 

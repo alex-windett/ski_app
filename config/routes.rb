@@ -1,10 +1,13 @@
 SkiApp::Application.routes.draw do
 
+ 
   resources :user, only: [:index, :show]
 
   resources :comments
 
-  resources :runs
+  resources :runs do
+     resources :media
+  end
 
   resources :resorts
 

@@ -20,6 +20,7 @@
   # GET /runs/1.json
   def show
     @run = Run.find(params[:id])
+    @media = @run.mediums
     @markers = Marker.all
 
     respond_to do |format|

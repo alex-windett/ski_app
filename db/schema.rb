@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140907145619) do
+ActiveRecord::Schema.define(:version => 20140910101228) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(:version => 20140907145619) do
     t.datetime "updated_at",        :null => false
   end
 
+  create_table "media", :force => true do |t|
+    t.string   "image"
+    t.string   "video"
+    t.integer  "user_id"
+    t.integer  "run_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "resorts", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -59,8 +68,6 @@ ActiveRecord::Schema.define(:version => 20140907145619) do
   create_table "runs", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "image"
-    t.text     "video"
     t.integer  "resort_id"
     t.float    "rating"
     t.datetime "created_at",       :null => false

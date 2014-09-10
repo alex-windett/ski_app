@@ -2,18 +2,14 @@
 
 <aside class="run_details">
   <h2><%= @run.name %></h2>
-
+  <p style="display:none" id="run_id"><%= @run.id %></p>
   <p>Description: <%= @run.description %></p>
-
   <p>Resort: <%= @run.resort.name %></p>
-
   <p>Rating: <%= @run.rating %></p>
-
   <div class="geo_data">
-  <p><button onclick="geoFindMe()">Start Tracking</button></p>
-  <div id="output"></div>
-</div>
-
+    <p><button onclick="geoFindMe()">Start Tracking</button></p>
+    <div id="output"></div>
+  </div>
 </aside>
 
 <!-- <table class='run_info'>
@@ -45,6 +41,13 @@
   <div class="graph"></div>
 </section>
 
+<section>
+  <% @media.each do |media| %>
+    <%= image_tag media.image.detail.url %>
+    <%#= run_media_path(@run, media) %>
+  <% end %>
+</section>
 
+<%= link_to 'New Media to this run', new_run_medium_path(@run) %> |
 <%= link_to 'Edit', edit_run_path(@run) %> |
 <%= link_to 'Back', runs_path %>

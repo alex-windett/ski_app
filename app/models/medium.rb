@@ -8,7 +8,7 @@ class Medium < ActiveRecord::Base
   mount_uploader :image, MediaImageUploader
   mount_uploader :video, MediaVideoUploader
 
-  def set_success(format, opts)
-    self.success = true
-  end
+  # def set_success(format, opts)
+  #   self.success = true
+  # end
 end

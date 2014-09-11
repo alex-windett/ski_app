@@ -7,11 +7,10 @@ function geoFindMe() {
   }
 
   function success(position) {
-    var latitude  = position.coords.latitude;
-    var longitude = position.coords.longitude;
+    latitude  = position.coords.latitude;
+    longitude = position.coords.longitude;
     output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
-    console.log(latitude)
-    console.log(longitude)
+    
   };
 
   function error() {
@@ -26,6 +25,33 @@ function geoFindMe() {
   }
 
   navigator.geolocation.watchPosition(success, error, options);
+
+
+
+// $(document).ready(function(){
+
+//  var request = $.ajax({
+//     type: "POST",
+//     url: "/markers.json",
+//     dataType: "json",
+//     data: {
+//       latitude: latitude,
+//       longitude: longitude
+//     }
+//   })
+
+//  request.success(function(){
+//      console.log(latitude)
+//     console.log(longitude)
+//   })
+
+//  request.fail(function(){
+//   alert("failed")
+//  })
+// });
+
 }
 
+
 // ajax put request with the latitude and longitude into markers model into the corosponding colomuns
+

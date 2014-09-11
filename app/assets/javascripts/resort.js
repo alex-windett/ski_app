@@ -5,8 +5,6 @@ $(document).ready(function(){
 
   $.ajax({
     type: "GET",
-    // url: "http://api.worldweatheronline.com/free/v1/ski.ashx?key=fc291ebd60c20935283da4510cd776a66d335e1d&q=45.4506%2C6.978&format=json",
-    // url: "http://api.worldweatheronline.com/free/v1/ski.ashx?key=fc291ebd60c20935283da4510cd776a66d335e1d&q=" + lat + "%2C" + long + "&format=json",
     url: "http://api.worldweatheronline.com/free/v1/ski.ashx?key=fc291ebd60c20935283da4510cd776a66d335e1d&q=" + val + "&format=json",
     dataType: "json"
   }).success(function(data){

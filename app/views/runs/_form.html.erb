@@ -20,16 +20,12 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :image %><br />
-    <%= f.file_field :image %>
-  </div>
-  <div class="field">
     <%= f.label :resort_id %><br />
     <%= f.collection_select :resort_id, Resort.all, :id, :name %>
   </div>
   <div class="field">
-    <%= f.label :rating %><br />
-    <%= f.text_field :rating %>
+    <%= f.label :rating, "Rating out of 5" %><br />
+    <%= f.number_field :rating %>
   </div>
     <div class="field">
     <%= f.label :gpx %><br />

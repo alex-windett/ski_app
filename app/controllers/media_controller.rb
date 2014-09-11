@@ -41,7 +41,8 @@ class MediaController < ApplicationController
   # POST /media
   # POST /media.json
   def create
-    @medium = Medium.new(params[:medium])
+    @run = Run.find(params[:run_id])
+    @medium = @run.mediums.new(params[:medium])
 
 
     respond_to do |format|

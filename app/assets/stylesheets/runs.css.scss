@@ -16,6 +16,21 @@
   float: left;
 }
 
+.media {
+  margin-top: 2%;
+  width: 66%;
+  padding-bottom: 2%;
+   img {
+    width: 48%;
+    height: auto;
+    padding-right: 2%;
+   }
+   video {
+    width: 48%;
+    }
+}
+
+
 .geo_data {
   position: relative;
 }

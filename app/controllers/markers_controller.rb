@@ -29,7 +29,7 @@ class MarkersController < ApplicationController
   # GET /countries/new
   # GET /countries/new.json
   def new
-    @country = Country.new
+    @marker = Marker.new
 
     respond_to do |format|
       format.html # new.html.erb

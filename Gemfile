@@ -20,6 +20,8 @@ gem "twitter_oauth"
 gem 'angularjs-rails'
 gem 'high_voltage'
 gem 'carrierwave-video'
+gem 'kaminari' #pagination
+gem 'bootstrap-kaminari-views'
 
 # Gems used only for assets and not required
 # in production environments by default.

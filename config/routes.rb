@@ -9,7 +9,9 @@ SkiApp::Application.routes.draw do
      resources :media
   end
 
-  resources :resorts
+  resources :resorts do
+    get 'page/:page', action: :index, on: :collection
+  end
 
   resources :markers, only: [:index, :new]
 
